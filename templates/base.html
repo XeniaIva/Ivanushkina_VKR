@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+    <div class="nav">
+        <a href="/">О приложении</a>
+        <a href="/word">Определение ключевых слов документа</a>
+        <a href="/package">Пакетная обработка документов</a>
+    </div>
+    <div class="main">
+        <div>
+            <h1>{% block title %}{% endblock %}</h1>
+            <div>
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+</body>
+<style type="text/css">
+        body {
+            background-color: #181928;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main {
+            background-color: rgba(255,255,255,0.85);
+            border-radius: 7px;
+            padding: 30px;
+            margin: 10px;
+            color: #000000;
+        }
+
+        .nav {
+            color: #fff;
+            border-bottom: 2px solid #fff;
+            margin-bottom : 15px;
+            padding: 10px;
+        }
+
+        a {
+            padding: 10px;
+            text-decoration:none;
+            color: #fff !important;
+        }
+
+        a:hover, a:focus, button:hover, button:focus {
+            background-color: #181928;
+            border: none;
+            outline: none;
+        }
+
+        button {
+            background-color: #181928;
+            padding: 8px;
+            color: #fff;
+            border: none;
+            outline: none;
+            margin: 5px 0;
+            cursor: pointer;
+        }
+    </style>
+</html>

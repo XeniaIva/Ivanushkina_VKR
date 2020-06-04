@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block title %} Определение ключевых слов документа {% endblock %}
+{% block content %}
+{% csrf_token %}
+<div>
+    <form method="POST"enctype="multipart/form-data">{% csrf_token %}
+    	<textarea name="text"></textarea>
+    	<div class="input">
+    		<input type="file" name="file">	
+    	</div>
+	    <div class="flx">
+	    	<div>
+	    		<input type="number" name="topics" min="1" max="10" value="1" step="1">
+	    		<span>Введите количество тем</span>
+	    	</div>
+	    	<div>
+	    		<input type="number" name="words" min="1" max="10" value="1" step="1">
+	    		<span>Введите количество слов в каждой теме</span>
+	    	</div>
+	    	<h2>Выберите метод обработки</h2>
+	    	<label>
+	    		<input type="checkbox" name="LDA" value="LDA" id="LDA">
+	    		<span>LDA (без использования нейронной сети)</span>
+	    	</label>
+	    	<label>
+	    		<input type="checkbox" name="LDA+BERT" value="LDA+BERT" id="LDA+BERT">
+	    		<span>LDA+BERT (с использованием нейронной сети)</span>
+	    	</label>
+	    	
+	    </div>
+	    <button type="submit">Подтвердить</button>
+    </form>
+</div>
+<style type="text/css">
+	.flx {
+		display: flex;
+		flex-direction: column;
+	}
+
+	textarea {
+		width: 400px;
+		height: 200px;
+		resize: none;
+	}
+	.input {
+		margin: 5px 0;
+	}
+</style>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %} Тематическая близость нескольких текстов{% endblock %}
+{% block content %}
+{% csrf_token %}
+<div>
+    <form method="POST" enctype="multipart/form-data">{% csrf_token %}
+    	<input type="file" name="files" id="files" multiple accept="image" />
+    	<div>
+	    		<input type="number" name="clusters" min="1" value="1" step="1">
+	    		<span>Введите количество кластеров(не более количества файлов)</span>
+	    </div>
+	    <button type="submit">Подтвердить</button>
+    </form>
+</div>
+<style type="text/css">
+	div {
+		margin: 10px 0;
+	}
+</style>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %} Ключевые слова, полученные с использованием выбранных методов{{method.0}} {{method.1}}{% endblock %}
+{% block content %}
+{% csrf_token %}
+<div class="info">
+	{% for keyword in keywords %}
+		<h2>{{keyword.0}}</h2>
+	    <div>
+	    	<h4>Ключевые слова:</h4>
+	    	{% for keyword in keyword.1 %}
+	    	<span>
+	    		{{ keyword }}
+	    	</span>
+	    	{% endfor %}
+	    </div>
+    {% endfor %}
+</div>
+<style type="text/css">
+	.info {
+		padding: 10px; 
+	}
+</style>
+{% endblock %}

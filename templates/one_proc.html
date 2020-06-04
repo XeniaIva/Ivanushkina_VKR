@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %} Метод обработки {{method}} {% endblock %}
+{% block content %}
+{% csrf_token %}
+<div>
+    <h2>{{method}}</h2>
+    <div>
+    	{{keywords}}
+    </div>
+</div>
+{% endblock %}
